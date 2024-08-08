@@ -6,7 +6,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:19090/eureka/
 
-
 spring:
   application:
     name: order-service
@@ -32,3 +31,11 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
+
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0

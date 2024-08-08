@@ -1,5 +1,6 @@
 server:
   port: 19093
+
 eureka:
   client:
     service-url:
@@ -30,3 +31,11 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
+
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0
