@@ -1,5 +1,6 @@
 package com.sparta.msa_exam.product.controller;
 
+import com.sparta.msa_exam.product.dto.ProductDto;
 import com.sparta.msa_exam.product.entity.Product;
 import com.sparta.msa_exam.product.repository.ProductRepository;
 import com.sparta.msa_exam.product.service.ProductService;
@@ -23,7 +24,6 @@ public class ProductController {
     // 필수 기능 1.1: 상품 추가 API
     @PostMapping("/products")
     public Product createProduct(@RequestBody Product product,
-
                                  HttpServletResponse response) {
         response.addHeader("Server-Port", serverPort);
         return productService.save(product);
@@ -32,7 +32,7 @@ public class ProductController {
 
     // 필수 기능 1.2: 상품 목록 조회 API
     @GetMapping("/products")
-    public List<Product> getProducts(HttpServletResponse response) {
+    public List<ProductDto> getProducts(HttpServletResponse response) {
         response.addHeader("Server-Port", serverPort);
         return productService.findAll();
     }
