@@ -15,11 +15,16 @@ spring:
       port: 6379
       username: default
       password: systempass
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/msadb1?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: 1234!@#$
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/msadb1?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+#    username: root
+#    password: 1234!@#$
+
+  profiles:
+    active: prod
+  config:
+    import: 'optional:configserver:'
 
   jpa:
     open-in-view: true

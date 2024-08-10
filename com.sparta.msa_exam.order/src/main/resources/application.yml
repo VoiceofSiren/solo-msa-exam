@@ -21,6 +21,10 @@ spring:
     username: root
     password: 1234!@#$
 
+  profiles:
+    active: dev
+  config:
+    import: "optional:configserver:"
 
   jpa:
     open-in-view: true
